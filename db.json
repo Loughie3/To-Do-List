@@ -1,0 +1,24 @@
+{
+  "newGoals": [
+    {
+      "id": 1,
+      "goal": "Code for at least for four hours today "
+    },
+    {
+      "id": 2,
+      "goal": "Do the washing"
+    },
+    {
+      "goal": "sdf",
+      "id": 3
+    },
+    {
+      "goal": "Hey there",
+      "id": 4
+    },
+    {
+      "goal": "Another goal",
+      "id": 5
+    }
+  ]
+}
