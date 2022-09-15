@@ -41,13 +41,13 @@ export default {
   form {
     max-width: 420px;
     margin: 30px auto;
-    background:crimson;
-    text-align: left;
+    background: black;
+    text-align: center;
     padding: 30px;
     border-radius: 5px;
   }
   .storedGoals {
-    color: wheat;
+    color: crimson;
     size: 20px;
 
   }
@@ -60,7 +60,7 @@ export default {
     border: 0;
     padding: 5px 5px;
     margin-top: 10px;
-    color: white;
+    color: bisque;
     border-radius: 5px;
   }
   

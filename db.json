@@ -1,12 +1,19 @@
 {
   "newGoals": [
     {
-      "id": 1,
-      "goal": "Code for at least for four hours today "
+      "goal": "Check my car's oil",
+      "id": 3,
+      "complete": false
     },
     {
-      "goal": "Take the washoing",
-      "id": 2
+      "goal": "Finish To Do list",
+      "id": 4,
+      "complete": true
+    },
+    {
+      "goal": "Practise coding for at least 4 hours today",
+      "id": 5,
+      "complete": true
     }
   ]
 }

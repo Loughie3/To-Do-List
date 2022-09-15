@@ -5,9 +5,8 @@
 
  
  <div v-for="newGoal in newGoals" :key="newGoal.id" class = 'newGoal'>
- <li> <deleteGoal :newGoal = "newGoal"/> </li>
- 
- 
+  <h2>  <deleteGoal :newGoal = "newGoal" @complete="handleComplete" class = "inLine"  />    </h2> 
+  
  </div>
  
  
@@ -22,6 +21,8 @@ import deleteGoal from './components/deleteGoal.vue';
 
 
 
+
+
 export default {
   name: 'App',
   components: { addProject, deleteGoal },
@@ -30,28 +31,42 @@ export default {
       newGoals: [],
       
           }
-    },
-   
-
     
-  
-  
+  },
+ 
+ 
   mounted() {
       fetch('http://localhost:3000/newGoals')
       .then(res => res.json())
       .then(data => this.newGoals = data)
       .catch(err => console.log(err.message))
       
-}, 
-updated(){
+},
+
+
+  
+ updated(){
   fetch('http://localhost:3000/newGoals')
       .then(res => res.json())
       .then(data => this.newGoals = data)
      
+},
+methods: {
+      handleComplete (id) {
+        let p = this.newGoals.find(newGoal => {
+            return newGoal.id === id
+        })
+        p.complete = !p.complete
+      },
+  
+
+
+  }
+
 }
 
 
-}
+
 
 
 
@@ -61,21 +76,25 @@ updated(){
 <style >
 #app 
   {
-    width: 400px;
-    border-radius: 20px;
-    background:crimson;
-    color: black;
+    width: 650px;
+    border-radius: 10px;
+    background:black;
+    color: bisque;
     text-align: center;
-    padding: 100px 0;
+    padding: 40px 0;
     margin: 40px auto;
+    
 
   }
   .newGoal{
-    color: bisque;
+    color: crimson;
     text-align: center;
     
     
    
+  }
+  .inLine {
+    display:inline-block
   }
    
 
