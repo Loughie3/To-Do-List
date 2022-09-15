@@ -7,6 +7,7 @@
  <div v-for="newGoal in newGoals" :key="newGoal.id" class = 'newGoal'>
  <li> <deleteGoal :newGoal = "newGoal"/> </li>
  
+ 
  </div>
  
  
@@ -30,6 +31,9 @@ export default {
       
           }
     },
+   
+
+    
   
   
   mounted() {
@@ -37,10 +41,18 @@ export default {
       .then(res => res.json())
       .then(data => this.newGoals = data)
       .catch(err => console.log(err.message))
+      
+}, 
+updated(){
+  fetch('http://localhost:3000/newGoals')
+      .then(res => res.json())
+      .then(data => this.newGoals = data)
+     
+}
 
 
 }
-}
+
 
 
 

@@ -1,6 +1,6 @@
 <template>
 
-  <div class = 'newGoal' >  {{newGoal.goal}} <button @click ="deleteGoal" >Delete Goal</button>
+  <div class = 'newGoal' > {{newGoal.goal}} <button @click ="deleteGoal" >Delete Goal</button>
    
   </div>
 </template>
@@ -10,12 +10,12 @@ export default {
     props: ['newGoal'],
     data(){
         return{
-            
+            uri: 'http://localhost:3000/newGoals/' + this.newGoal.id 
         }
     },
     methods: {
    deleteGoal() {
-    fetch('http://localhost:3000/newGoals.goal' + this.newGoal.id , { method: 'DELETE' })
+    fetch(this.uri, { method: 'DELETE' })
    }
 }
     }
